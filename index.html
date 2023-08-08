@@ -3,33 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python Web Interface</title>
+  <title>Twitch Stream</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #121212;
-      color: white;
-      font-family: Arial, sans-serif;
+      background-color: #121212; /* Replace with your preferred dark shade */
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
-    .python-window {
+    .stream-container {
       width: 80%;
       max-width: 800px;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      position: relative;
+      overflow: hidden;
+    }
+    .stream-embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
-  <div class="python-window">
-    <h2>Python Output:</h2>
-    <pre id="python-output"></pre>
+  <div class="stream-container">
+    <iframe
+      class="stream-embed"
+      src="https://player.twitch.tv/?channel=CHANNEL_NAME&parent=YOUR_DOMAIN"
+      frameborder="0"
+      scrolling="no"
+      allowfullscreen="true">
+    </iframe>
   </div>
 </body>
 </html>
